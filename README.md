@@ -1,10 +1,9 @@
 # Docker config for Laravel Application
 
-> used with laravel 7.29
+> used with laravel 8.75
 
 ## images list
-<!-- - php:7.4-apache -->
-- php:7.4-apache
+- php:8.0.24-apache
 - postgres:10.6-alpine or
 - mysql 8.0.29
 - adminer

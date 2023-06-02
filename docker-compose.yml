@@ -4,7 +4,7 @@ services:
   app:
     build:
       args:
-      # get your user and uid from system
+        # get your user and uid from system
         user: ${USER}
         uid: ${UID:-1000}
       context: .
@@ -21,27 +21,6 @@ services:
     networks:
       - proxynet
 
-  # postgres:
-  #   image: postgres:10.6-alpine
-  #   restart: always
-  #   container_name: postgres
-  #   environment:
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_PASSWORD=postgres
-  #     - POSTGRES_DB=postgres
-  #   hostname: postgres
-  #   logging:
-  #     options:
-  #       max-size: 10m
-  #       max-file: "3"
-  #   ports:
-  #     - '5438:5432'
-  #   volumes: 
-  #     - db_data:/var/lib/postgresql/data
-  #     # - ./.docker/db/sql:/docker-entrypoint-initdb.d
-  #   networks:
-  #     - proxynet
-
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
@@ -54,8 +33,7 @@ services:
       MYSQL_DATABASE: homestead
       MYSQL_USER: user
       MYSQL_PASSWORD: user
-    volumes: 
-      - ./docker/db:/docker-entrypoint-initdb.d
+    volumes:
       - db_data:/var/lib/mysql
     networks:
       - proxynet
@@ -76,6 +54,7 @@ services:
 
 volumes:
   db_data:
+
 
 networks:
   proxynet:
