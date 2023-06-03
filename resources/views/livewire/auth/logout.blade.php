@@ -1,0 +1,1 @@
+<span wire:click="logout">Sign Out</span>
